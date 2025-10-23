@@ -11,7 +11,7 @@ export default function Login() {
 
     const handLogin = () => {
         localStorage.setItem("auth", "true");
-        navigate(`/perfil/${nombre}`);
+        navigate(`/perfil`);
     };
     return (
         <Container className="d-flex justify-content-center align-items-center min-vh-100">
@@ -34,7 +34,6 @@ export default function Login() {
                         </Card.Body>
                     </Card>
                 </Col>
-
             </Row>
         </Container>
     )

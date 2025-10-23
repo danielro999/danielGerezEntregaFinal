@@ -11,7 +11,7 @@ export default function Header() {
 
     const cerrarSesion = () => {
         localStorage.removeItem("auth");
-        navigate("/login");
+        navigate("/");
     };
     return (
         <Navbar bg='dark' variant="dark" expand="lg" className="mb-4">
