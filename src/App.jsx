@@ -6,7 +6,8 @@ import Header from "./components/Header"
 import Home from "./components/Home";
 import Ofertas from "./components/Ofertas";
 import Login from "./components/Login";
-import Infaltables from "./components/Infaltables";
+import Joyas from "./components/Joyas";
+    
 function App() {
   return (
     <>
@@ -14,14 +15,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home/> }></Route>
-          <Route path="/home" element={<Home />}></Route>
           <Route path="/Ofertas" element={<Ofertas />}></Route>
           <Route path="/administracion" element={<Login /> }></Route>
-          <Route path="/infaltables" element={<Infaltables />}></Route>
-    
+          <Route path="/joyas" element={<Joyas />}></Route>
         </Routes>
-
-
         <Footer />
       </Router>
     </>

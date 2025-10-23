@@ -7,8 +7,8 @@ export default function Footer() {
             <Container>
                 <Row>
                     <Col md={6}>
-                        <p className="mb-0" > Todo por dos pesos</p>
-                        <p className="mb.0" > Avenida siempre viva 472</p>
+                        <p className="mb-0" > Copyright Super Tienda- 2025. Todos los derechos reservados.</p>
+                        <p className="mb.0" > Colon 354, Escobar</p>
                     </Col>
                     <Col md={6}>
 

@@ -17,7 +17,7 @@ export default function Login() {
                                     <Form.Label>Usuario</Form.Label>
                                     <Form.Control type="text" placeholder="ingrese su nombre" required />
                                 </Form.Group>
-                                <Form.Group className="mb-3" controlId="formUsername">
+                                <Form.Group className="mb-3" controlId="formUserpassword">
                                     <Form.Label>Contraseña</Form.Label>
                                     <Form.Control type="password" placeholder="ingrese su contraseña" required />
                                 </Form.Group>

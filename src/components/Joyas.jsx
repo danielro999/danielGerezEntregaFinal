@@ -1,10 +1,10 @@
 import ProductList from "./ProductList";
 
-export default function Infaltables(){
+export default function Joyas(){
     return(
         <div className="container" > 
             <h1>Infaltables</h1>
-            <ProductList categoru="jewelery" />
+            <ProductList category="jewelery" />
         </div>
     )
 }
