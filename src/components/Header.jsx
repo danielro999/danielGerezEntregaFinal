@@ -1,9 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Nav, Navbar, Container, Button } from "react-bootstrap";
 import { TiShoppingCart } from "react-icons/ti";
 
 
 export default function Header() {
+
+    const navigate = useNavigate();
+
+    const isAuth = localStorage.getItem("auth") === "true";
+
+    const cerrarSesion = () => {
+        localStorage.removeItem("auth");
+        navigate("/login");
+    };
     return (
         <Navbar bg='dark' variant="dark" expand="lg" className="mb-4">
             <Container>
@@ -19,11 +28,29 @@ export default function Header() {
                     <Nav.Link as={Link} to="/ofertas" className="m-3">Ofertas</Nav.Link>
                     <Nav.Link as={Link} to="/joyas" className="m-3">Joyas</Nav.Link>
                     <div className="f-flex align-items-center">
+
+                        <Link to="/carrito" className="text-white m-3"><TiShoppingCart size="2em" /> </Link>
+                    </div>
+                </Nav>
+                <Nav>
+                    {/* utenticacion ? logout :login */}
+                    {!isAuth ? (
                         <Button variant="outline-light" as={Link} to="/administracion" className="me-2" >
                             Administracion
                         </Button>
-                        <Link to="/carrito" className="text-white"><TiShoppingCart size="2em" /> </Link>
-                    </div>
+                    ) : (
+                        <Button variant="outline-light" onClick={cerrarSesion}>
+                            Cerrar sesion
+                        </Button>
+                    )}
+                    {isAuth && (
+                        <>
+                            <Nav.Link as={Link} to="/perfil">
+                                Perfil
+                            </Nav.Link>
+                        </    >
+                    )}
+
                 </Nav>
             </Container>
         </Navbar>

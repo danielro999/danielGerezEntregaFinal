@@ -25,7 +25,7 @@ export default function ProductList({ category = null }) {
     }, [category])
 
     const handleAgregarCarrito = (product) => {
-        alert(`Producto ${product.title} agregado al carrito`)
+        alert(`Producto "${product.title}" agregado al carrito`)
     }
 
     if (loading) {

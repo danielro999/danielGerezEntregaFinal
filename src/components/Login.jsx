@@ -1,10 +1,18 @@
 import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";     
 
 export default function Login() {
-    const handleSumit = () => {
-        e.preventDefault();
-        alert('login enviado')
-    }
+    const navigate = useNavigate();
+
+            // const handleSumit = () => {
+            //     e.preventDefault();
+            //     alert('login enviado')
+            // }
+
+    const handLogin = () => {
+        localStorage.setItem("auth", "true");
+        navigate(`/perfil/${nombre}`);
+    };
     return (
         <Container className="d-flex justify-content-center align-items-center min-vh-100">
             <Row className="w-100 justify-content-center" >
@@ -12,7 +20,7 @@ export default function Login() {
                     <Card className="shadow-lg p-4">
                         <Card.Body>
                             <h2 className="text-center mb-4" >Iniciar sesion</h2>
-                            <Form onSubmit={handleSumit}>
+                            <Form onSubmit={handLogin}>
                                 <Form.Group className="mb-3" controlId="formUsername">
                                     <Form.Label>Usuario</Form.Label>
                                     <Form.Control type="text" placeholder="ingrese su nombre" required />
@@ -26,7 +34,7 @@ export default function Login() {
                         </Card.Body>
                     </Card>
                 </Col>
-    
+
             </Row>
         </Container>
     )
