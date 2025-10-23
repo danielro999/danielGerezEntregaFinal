@@ -1,12 +1,29 @@
 
 import "bootstrap/dist/css/bootstrap.min.css"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from './components/Footer'
-
+import Header from "./components/Header"
+import Home from "./components/Home";
+import Ofertas from "./components/Ofertas";
+import Login from "./components/Login";
+import Infaltables from "./components/Infaltables";
 function App() {
   return (
     <>
-      <Footer />
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home/> }></Route>
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/Ofertas" element={<Ofertas />}></Route>
+          <Route path="/administracion" element={<Login /> }></Route>
+          <Route path="/infaltables" element={<Infaltables />}></Route>
+    
+        </Routes>
 
+
+        <Footer />
+      </Router>
     </>
   )
 }
