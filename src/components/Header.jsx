@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Nav, Navbar, Container, Button } from "react-bootstrap";
+import { TiShoppingCart } from "react-icons/ti";
+
 
 export default function Header() {
     return (
@@ -20,7 +22,7 @@ export default function Header() {
                         <Button variant="outline-light" as={Link} to="/administracion" className="me-2" >
                             Administracion
                         </Button>
-                        <Link to="/carrito" className="text-white">Carrito</Link>
+                        <Link to="/carrito" className="text-white"><TiShoppingCart size="2em" /> </Link>
                     </div>
                 </Nav>
             </Container>
