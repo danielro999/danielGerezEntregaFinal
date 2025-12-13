@@ -26,9 +26,7 @@ export default function ProductList({ category = null }) {
             })
     }, [category])
 
-    const handleAgregarCarrito = (product) => {
-        alert(`Producto "${product.title}" agregado al carrito`)
-    }
+
 
     if (loading) {
         return <div>
@@ -40,7 +38,7 @@ export default function ProductList({ category = null }) {
         <Row>
             {products.map((product) => (
                 <Col md={4} key={product.id} className="mb-4">
-                    <ProductCard product={product} agregarAlCarrito={handleAgregarCarrito} />
+                    <ProductCard product={product} agregarAlCarrito={addToCart} />
                 </Col>
             ))}
         </Row>
