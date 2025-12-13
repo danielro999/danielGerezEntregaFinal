@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from './components/Footer'
 import Header from "./components/Header"
-import Home from "./components/Home";
-import Ofertas from "./components/Ofertas";
-import Login from "./components/Login";
-import Joyas from "./components/Joyas";
+import Home from "./pages/Home";
+import Ofertas from "./pages/Ofertas";
+import Login from "./pages/Login";
+import Joyas from "./pages/Joyas";
 import RutaProtegida from "./components/RutaProtegida";
 import Perfil from "./pages/Perfil";
 
