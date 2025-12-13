@@ -1,11 +1,13 @@
 import { Row, Col } from "react-bootstrap";
 import ProductCard from "./ProductCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CartContext } from '../context/CartContext';
 
 
 export default function ProductList({ category = null }) {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         let url = "https://fakestoreapi.com/products"

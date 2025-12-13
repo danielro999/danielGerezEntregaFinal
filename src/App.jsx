@@ -1,38 +1,40 @@
-
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Footer from './components/Footer'
-import Header from "./components/Header"
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Home from "./pages/Home";
 import Ofertas from "./pages/Ofertas";
 import Login from "./pages/Login";
 import Joyas from "./pages/Joyas";
 import RutaProtegida from "./components/RutaProtegida";
 import Perfil from "./pages/Perfil";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
     <>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home/> }></Route>
-          <Route path="/Ofertas" element={<Ofertas />}></Route>
-          <Route path="/administracion" element={<Login /> }></Route>
-          <Route path="/joyas" element={<Joyas />}></Route>
-                  <Route
-                    path="/perfil"
-                    element={
-                      <RutaProtegida>
-                        <Perfil />
-                      </RutaProtegida>
-                    }
-                  ></Route> 
-        </Routes>
-        <Footer />
-      </Router>
+      <CartProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/Ofertas" element={<Ofertas />}></Route>
+            <Route path="/administracion" element={<Login />}></Route>
+            <Route path="/joyas" element={<Joyas />}></Route>
+            <Route
+              path="/perfil"
+              element={
+                <RutaProtegida>
+                  <Perfil />
+                </RutaProtegida>
+              }
+            ></Route>
+          </Routes>
+          <Footer />
+        </Router>
+      </CartProvider>
     </>
-  )
+  );
 }
 
-export default App    
+export default App;
