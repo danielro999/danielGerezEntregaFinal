@@ -68,8 +68,8 @@ export default function Header() {
           )}
           {isAuth && (
             <>
-              <Nav.Link as={Link} to="/perfil">
-                Perfil
+              <Nav.Link as={Link} to="/crudproductos">
+                CRUD
               </Nav.Link>
             </>
           )}

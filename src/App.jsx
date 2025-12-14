@@ -7,8 +7,8 @@ import Ofertas from "./pages/Ofertas";
 import Login from "./pages/Login";
 import Joyas from "./pages/Joyas";
 import RutaProtegida from "./components/RutaProtegida";
-import Perfil from "./pages/Perfil";
 import { CartProvider } from "./context/CartContext";
+import CrudProductos from "./components/CrudProductos";
 
 function App() {
   return (
@@ -22,10 +22,10 @@ function App() {
             <Route path="/administracion" element={<Login />}></Route>
             <Route path="/joyas" element={<Joyas />}></Route>
             <Route
-              path="/perfil"
+              path="/crudproductos"
               element={
                 <RutaProtegida>
-                  <Perfil />
+                  <CrudProductos />
                 </RutaProtegida>
               }
             ></Route>

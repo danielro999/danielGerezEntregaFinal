@@ -11,7 +11,7 @@ export default function Login() {
 
     const handLogin = () => {
         localStorage.setItem("auth", "true");
-        navigate(`/perfil`);
+        navigate(`/crudproductos`);
     };
     return (
         <Container className="d-flex justify-content-center align-items-center min-vh-100">
