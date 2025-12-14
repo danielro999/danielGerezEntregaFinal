@@ -15,7 +15,7 @@ export default function Header() {
     navigate("/");
   };
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
+    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 sticky-top">
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img
