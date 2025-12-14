@@ -9,7 +9,7 @@ import Joyas from "./pages/Joyas";
 import RutaProtegida from "./components/RutaProtegida";
 import { CartProvider } from "./context/CartContext";
 import CrudProductos from "./components/CrudProductos";
-import Cart from "./components/cart";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
