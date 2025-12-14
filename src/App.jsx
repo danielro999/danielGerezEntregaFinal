@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import Joyas from "./pages/Joyas";
 import RutaProtegida from "./components/RutaProtegida";
 import { CartProvider } from "./context/CartContext";
-import CrudProductos from "./components/CrudProductos";
+import CrudProductos from "./pages/CrudProductos";
 import Cart from "./pages/Cart";
 
 function App() {
