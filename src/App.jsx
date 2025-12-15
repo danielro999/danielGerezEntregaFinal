@@ -10,31 +10,34 @@ import RutaProtegida from "./components/RutaProtegida";
 import { CartProvider } from "./context/CartContext";
 import CrudProductos from "./pages/CrudProductos";
 import Cart from "./pages/Cart";
+import {AuthProvider} from "./context/AuthContext";
 
 function App() {
   return (
     <>
-      <CartProvider>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/Ofertas" element={<Ofertas />}></Route>
-            <Route path="/administracion" element={<Login />}></Route>
-            <Route path="/joyas" element={<Joyas />}></Route>
-            <Route path="/carrito" element= {<Cart />} ></Route>
-            <Route
-              path="/crudproductos"
-              element={
-                <RutaProtegida>
-                  <CrudProductos />
-                </RutaProtegida>
-              }
-            ></Route>
-          </Routes>
-          <Footer />
-        </Router>
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <Router>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/Ofertas" element={<Ofertas />}></Route>
+              <Route path="/administracion" element={<Login />}></Route>
+              <Route path="/joyas" element={<Joyas />}></Route>
+              <Route path="/carrito" element={<Cart />}></Route>
+              <Route
+                path="/crudproductos"
+                element={
+                  <RutaProtegida>
+                    <CrudProductos />
+                  </RutaProtegida>
+                }
+              ></Route>
+            </Routes>
+            <Footer />
+          </Router>
+        </CartProvider>
+      </AuthProvider>
     </>
   );
 }

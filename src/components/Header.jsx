@@ -3,17 +3,20 @@ import { Nav, Navbar, Container, Button, Badge } from "react-bootstrap";
 import { TiShoppingCart } from "react-icons/ti";
 import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
+import { useAuth } from "../context/AuthContext";
 
 export default function Header() {
+  const { logout } = useAuth();
   const navigate = useNavigate();
   const { cart } = useContext(CartContext);
   const totalItems = cart.reduce((acc, item) => acc + item.cantidad, 0);
-  const isAuth = localStorage.getItem("auth") === "true";
-
+  const isAuth = localStorage.getItem("token") ===
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30";
   const cerrarSesion = () => {
-    localStorage.removeItem("auth");
+    logout();
     navigate("/");
   };
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 sticky-top">
       <Container>
@@ -51,7 +54,6 @@ export default function Header() {
           </div>
         </Nav>
         <Nav>
-          {/* utenticacion ? logout :login */}
           {!isAuth ? (
             <Button
               variant="outline-light"
